@@ -72,5 +72,37 @@ describe('cabeçalho da página home', () => {
         })
     })
     
+    context('logado', () => {
+        
+        // construindo meu estado
+        before(() => {
+            cy.login(Cypress.env('email'), Cypress.env('password'))
+        })
+
+        beforeEach(() => {
+            cy.visit('/')
+        })
+
+        after(() => {
+            Cypress.Cookies.defaults({
+                preserve: []
+            })
+        })
+
+        ;[
+            { seletor: 'navbar-conexaoQA', link: '/', menu: ' ConexãoQA' },
+            { seletor: 'navbar-QAs', link: '/perfis', menu: 'QAs' },
+            { seletor: 'navbar-posts', link: '/posts', menu: 'Posts' },
+            { seletor: 'navbar-dashboard', link: '/dashboard', menu: ' Dashboard' },
+            { seletor: 'navbar-about', link: '/sobre', menu: 'Sobre' },
+            { seletor: 'navbar-logout', link: '/', menu: ' Sair' },
+        ].forEach(({ seletor, link, menu }) => {
+
+            it(`valida o menu ${menu} - Teste Dinâmico`, () => {
+                
+                validarMenu(seletor, link, menu)
+            })
+        })
+    })
 
 })
