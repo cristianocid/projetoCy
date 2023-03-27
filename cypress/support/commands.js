@@ -1,5 +1,5 @@
 import Ajv from 'ajv'
-import { definitionHelper } from '../utils/schemaDefinitions.js'
+import { definitionHelper } from '../utils/schemaDefinitions'
 
 // loga na aplicação via API
 Cypress.Commands.add('login', (email, password) => {

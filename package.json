@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "ajv": "^6.12.6",
-    "cypress": "^12.7.0"
+    "cypress": "^11.1.0"
   }
 }
