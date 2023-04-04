@@ -27,6 +27,6 @@ describe('página de login', () => {
 
         // valida se o usuário está logado
         cy.getElement('dashboard-welcome')
-            .should('contain', 'Teste Iterasys')
+            .should('contain', 'cristiano')
     })
 })
